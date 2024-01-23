@@ -22,17 +22,12 @@ const perks = [
     description:
       "Get your assets delivered to your email in seconds and download them right away.",
   },
-  {
-    name: "Feel the Magic",
-    Icon: Wand2,
-    description:
-      "Get your assets delivered to your email in seconds and download them right away.",
-  },
+ 
 ]
 
 export default function Home() {
   return (
-   <main className="mt-2">
+   <main className="mt-6 mb-6">
         <section className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
             Your marketplace for high-quality{" "}
