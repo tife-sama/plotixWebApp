@@ -45,17 +45,28 @@ export type CreateUserParams = {
 
 // Update User
 export type UpdateUserParams = {
-    userId: string;
-    updates: {
+        email? : string,
         firstName?: string;
         lastName?: string;
         username?: string;
         photo?: string;
         aboutMe?: string;
         location?: string;
-    };
+        interestedIn?: any;
+        role?: any
+
 };
 
+export type RemoveUrlQueryParams = {
+    params? : any,
+    keysToRemove? : [any]
+}
+
+export type UrlQueryParams = {
+    params? : any,
+    key? : any,
+    value? : any
+}
 // Get User by ID
 export type GetUserByIdParams = {
     userId: string;
