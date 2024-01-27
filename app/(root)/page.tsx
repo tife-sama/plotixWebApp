@@ -30,7 +30,7 @@ export default function Home() {
    <main className="mt-6 mb-6">
         <section className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            Your marketplace for high-quality{" "}
+            Your marketplace PLOTIX ! for high-quality{" "}
             <span className="text-purple-600">digital assets</span>.
           </h1>
           <p className="mt-6 text-lg max-w-prose text-muted-foreground">
