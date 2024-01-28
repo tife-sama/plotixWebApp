@@ -20,7 +20,7 @@ export const createUser = async (user: CreateUserParams) => {
 }
 export async function getUserById(userId: string) {
     try {
-      await connectToDatabase()
+      await connectToDatabase();
   
       const user = await User.findById(userId)
   

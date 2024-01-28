@@ -1,31 +1,28 @@
-import { Schema, model, models, Document } from 'mongoose';
+import { Schema, model, models, Document } from 'mongoose'
 
-interface IOrder extends Document {
-  createdAt: Date;
-  stripeId: string;
-  totalAmount: string;
+export interface IOrder extends Document {
+  createdAt: Date
+  stripeId: string
+  totalAmount: string
+  event: {
+    _id: string
+    title: string
+  }
   buyer: {
-    _id: string;
-    firstName: string;
-    lastName: string;
-  };
-  purchasedSessions: {
-    coachId: string;
-    orderId: string;
-    totalAmount: string;
-    eventTitle: string;
-    SessionDate: Date;
-  }[];
+    _id: string
+    firstName: string
+    lastName: string
+  }
 }
 
 export type IOrderItem = {
-  _id: string;
-  totalAmount: string;
-  createdAt: Date;
-  eventTitle: string;
-  eventId: string;
-  buyer: string;
-};
+  _id: string
+  totalAmount: string
+  createdAt: Date
+  eventTitle: string
+  eventId: string
+  buyer: string
+}
 
 const OrderSchema = new Schema({
   createdAt: {
@@ -40,21 +37,16 @@ const OrderSchema = new Schema({
   totalAmount: {
     type: String,
   },
+  event: {
+    type: Schema.Types.ObjectId,
+    ref: 'Event',
+  },
   buyer: {
     type: Schema.Types.ObjectId,
     ref: 'User',
   },
-  purchasedSessions: [
-    {
-      coachId: { type: Schema.Types.ObjectId, ref: 'User' }, // Assuming coach details are part of the User model
-      orderId: { type: Schema.Types.ObjectId, ref: 'Order' },
-      totalAmount: { type: String },
-      eventTitle: { type: String },
-      SessionDate: { type: Date },
-    }
-  ],
-});
+})
 
-const Order = models.Order || model<IOrder>('Order', OrderSchema);
+const Order = models.Order || model('Order', OrderSchema)
 
-export default Order;
+export default Order
